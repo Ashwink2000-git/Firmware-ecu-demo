@@ -10,5 +10,5 @@ COPY . /app
 # Build the firmware
 RUN make
 
-# Run the firmware
-CMD ["./firmware"]
+# Run the firmware and keep the container running
+CMD ["sh", "-c", "./firmware && tail -f /dev/null"]
